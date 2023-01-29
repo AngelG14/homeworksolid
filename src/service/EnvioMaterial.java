@@ -1,13 +1,22 @@
 package service;
 
-import modelo.Envio;
 import modelo.Estudiante;
 
-import java.util.ArrayList;
-
-public class EnvioMaterial {
+public class EnvioMaterial{
 
     public void enviarMaterialEstudiante(Estudiante estudiante) {
+
+
+        EmailServicio servicio = new EmailServicio(new EmailOutlook());
+        servicio.envioEmail(estudiante.getEnvio());
+
+        /*
+
+        Problema de open close ya que al agregar una nueva carrera es necesario agregarla en el codigo
+
+        Se localizaron varios problemas de inversion de dependencia (email y envio, enviarMaterialEstudiante y envio)
+        ya que dependen de implementaciones y no de abstracciones
+        estudiante.getEnvio()
         if (estudiante.carrera.equals("Informatica")) {
             Envio envio = new Envio();
             envio.material = new ArrayList<>();
@@ -23,5 +32,8 @@ public class EnvioMaterial {
         if (estudiante.carrera.equals("Industrial")) {
             //
         }
+
+        */
+
     }
 }
