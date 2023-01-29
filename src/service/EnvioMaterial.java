@@ -12,11 +12,9 @@ public class EnvioMaterial{
 
         /*
 
-        Problema de open close ya que al agregar una nueva carrera es necesario agregarla en el codigo
-
-        Se localizaron varios problemas de inversion de dependencia (email y envio, enviarMaterialEstudiante y envio)
-        ya que dependen de implementaciones y no de abstracciones
-        estudiante.getEnvio()
+        Problema de open close ya que al agregar una nueva carrera es necesario agregarla en el codigo, 
+        ademas se localizo un problema de inversion de dependencia ( en email) ya que depende de la implementacion y no de abstracciones.
+        
         if (estudiante.carrera.equals("Informatica")) {
             Envio envio = new Envio();
             envio.material = new ArrayList<>();
